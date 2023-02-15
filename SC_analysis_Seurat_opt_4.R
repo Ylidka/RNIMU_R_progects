@@ -21,7 +21,7 @@ library(tibble)
 
 # Load the Tabula Muris spleen dataset
 
-spl_m_data<- Read10X(data.dir = "Spleen-10X_P4_7/")
+spl_m_data<- Read10X(data.dir = "Spleen-10X_P4_7/") #data folder
 
 # Create Seurat object
 
@@ -63,7 +63,7 @@ plot1 + plot2
 all.genes <- rownames(spl_m)
 spl_m <- ScaleData(spl_m, features = all.genes)
 
-# Run PCA метод главных компонентов
+# Run PCA
 
 spl_m <- RunPCA(spl_m, features = VariableFeatures(object = spl_m))
 
